@@ -1,0 +1,15 @@
+<h1>Posts Index</h1>
+<% @posts.each do |p| %>
+	<h2><%= p.author %></h2>
+	<h3><%= p.text %></h3>
+	<h3><%= p.body %></h3>
+	<button><%= link_to "Show Page", post_path(p) %></button> |
+	<button><%= link_to "Edit Post", edit_post_path(p) %></button> |
+	<button><%= link_to "Delete Post", p, method: :delete %></button>
+	<hr />
+<% end %>
+
+<br />
+<br />
+<button><%= link_to "New Post", new_post_path %></button>
+
